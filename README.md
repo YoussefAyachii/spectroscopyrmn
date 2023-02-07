@@ -1,5 +1,5 @@
 # Scope
-We use different optimization algorithms including the gradient descend, the proximal gradient descend and the forward backward primal dual algorithms in order to estimate the optimal solution of our optimization problem.
+Using different optimization algorithms including the gradient descend, the proximal gradient descend and the forward backward primal dual algorithms in order to estimate the optimal solution of the following optimization problem:
 ![Fig.3](./include/optim_pb.png "optimization problem")
 
 # Context
