@@ -22,7 +22,8 @@ def descend(y, K, lamb, gradient, ips, regu="L2"):
         # upload x_hat
         x_hat_new = x_hat_new - mu_optimal * gradient(x_hat_new, y, K)
         # upload stop_criteria
-        stop_criteria = np.square(np.linalg.norm(gradient(x_hat_new, y, K), ord=2))  # we want to stop when grdt is ~ 0
+        # we want to stop when grdt is ~ 0
+        stop_criteria = np.square(np.linalg.norm(gradient(x_hat_new, y, K), ord=2))
 
         # compute objective function value in each iteration
         objective_history.append(objective(x_hat_new, y, K, lamb, ridge))
