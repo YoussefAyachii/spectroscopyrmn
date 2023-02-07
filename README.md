@@ -12,10 +12,10 @@ To run this project, please start by activate the built-in virtual environment. 
 # Project
 1. Input signal (x_bar) as function of a sampling grid T (x(T)) (see `functions.py`):
 ![Fig.1](./figures/original_signal.png "Original Signal")
-\
+
 2. y signal (y(t)) where ```y = K * x + w```
 ![Fig.2](./figures/y(t).png "y signal")
-\
+
 3. Finding an estimate (x_hat) of the original signal (x_bar) by solving the following optimization problem:
 ![Fig.3](./include/optim_pb.png "optimization problem")
 Remark: Being both convex and coercive, the objective function has a unique solution.
@@ -29,7 +29,7 @@ Remark: Being both convex and coercive, the objective function has a unique solu
    ![Fig.6](./figures/x_hat_grdt_dscd_ridge.png "Estimated x_hat signal using gradient descend algorithm (with ridge regularization)")
    When searching for the best hyperparameter lambda, the quadratic error shows that the algorithm is not a good choice for our optimization problem.
    ![Fig.7](./figures/quadratic_error_grdt_dscd_ridge.png "Quadratic error x_bar vs x_hat using gradient descend algorithm")
-   The latter results show that the gradient descend is not working well due to the fact that our matrix is **ill-conditioned**, i.e. its condition number is very large.\
+   The latter results show that the gradient descend is not working well due to the fact that our matrix is **ill-conditioned**, i.e. its condition number is very large.
 
    2. Proximal Gradient Descend Algorithm
    A more convenient algorithm to use in this situation is the proximal gradient descend algorithm.  Using, the same stop criteria, the decrease of the objective function value in each iteration when running this algorithm can be seen on the following plot: 
