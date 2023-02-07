@@ -18,7 +18,7 @@ To run this project, please start by activate the built-in virtual environment. 
 \
 3. Finding an estimate (x_hat) of the original signal (x_bar) by solving the following optimization problem:
 ![Fig.3](./include/optim_pb.png "optimization problem")
-#### With ridge regularization:
+#### a) With ridge regularization:
    ![Fig.4](./include/regu_term.png "regularization term: ridge")
    1. Gradient Descend Algorithm
    With ridge regularization term, we started by using the classic gradient descent algorithm in order to find the solution to this problem. We chose to stop our algorithm once the square of the norm L2 of the gradient is lower than a chosen epsilon value (10e-1, 10e-4), i.e. when the estimate x_hat is near the optimal solution. The decrease of the objective function value in each iteration when running this algorithm can be seen on the following plot: 
@@ -29,7 +29,7 @@ To run this project, please start by activate the built-in virtual environment. 
    ![Fig.7](./figures/quadratic_error_grdt_dscd_ridge.png "Quadratic error x_bar vs x_hat using gradient descend algorithm")
    The latter results show that the gradient descend is not working well due to the fact that our matrix is **ill-conditioned**, i.e. its condition number is very large.\
 
-    2. Proximal Gradient Descend Algorithm
+   2. Proximal Gradient Descend Algorithm
    A more convenient algorithm to use in this situation is the proximal gradient descend algorithm.  Using, the same stop criteria, the decrease of the objective function value in each iteration when running this algorithm can be seen on the following plot: 
    ![Fig.8](./figures/objective_history_prox_ridge.png "Objective fct history with proximal gradient descend algorithm")
    The resulting x_hat signal: 
@@ -37,7 +37,7 @@ To run this project, please start by activate the built-in virtual environment. 
    The quadratic error between the original (x_bar) and the estimate (x_hat) signals for the best lambda (=10.53) is equal to ~0.719.
    ![Fig.10](./figures/quadratic_error_prox_ridge.png "Quadratic error x_bar vs x_hat using proximal gradient descend algorithm")
 
-#### With lasso regularization:
+#### b) With lasso regularization:
    1. Forward Backward Primal Dual Algorithm
    When using the lasso regularization, both the proximal gradient descend and the gradient descend algorithms are not convenient. Thus, we chose to use the Forward Backward Primal Dual Algorithm.
    The decrease of the objective function value in each iteration when running this algorithm is as following:
