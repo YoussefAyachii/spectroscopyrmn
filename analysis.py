@@ -56,10 +56,10 @@ print("y shape  \n", y.shape)
 
 # display y as function of t.
 fig, ax = plt.figure(), plt.axes()
-plt.plot(t, y)
-ax.set_yscale("log")
+plt.scatter(t, y)
+plt.yscale("log")
 plt.title("y curve : \n y(t) = K * original_signal + w")
-plt.xlabel("t (log scale)")
+plt.xlabel("t")
 plt.ylabel("y(t)")
 plt.savefig("figures/y(t).png")
 
