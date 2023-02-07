@@ -18,6 +18,8 @@ To run this project, please start by activate the built-in virtual environment. 
 \
 3. Finding an estimate (x_hat) of the original signal (x_bar) by solving the following optimization problem:
 ![Fig.3](./include/optim_pb.png "optimization problem")
+Remark: Being both convex and coercive, the objective function has a unique solution.
+
 #### a) With ridge regularization:
    ![Fig.4](./include/regu_term.png "regularization term: ridge")
    1. Gradient Descend Algorithm
