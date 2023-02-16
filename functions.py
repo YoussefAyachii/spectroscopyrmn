@@ -10,7 +10,7 @@ def sampling_grid(N, Tmin, Tmax):
     n_vec = np.arange(1, N+1, 1)
 
     for i, n in enumerate(n_vec):
-        samp_grid[i] = Tmin * np.exp(- (n - 1) * (np.log(Tmin/Tmax) / N-1))
+        samp_grid[i] = Tmin * np.exp(- (n - 1) * (np.log(Tmin/Tmax) / (N-1)))
     return samp_grid
 
 
